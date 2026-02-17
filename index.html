@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nusiba Portfolio</title>
+  <style>
+    /* ================= GLOBAL ================= */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #F5E6E8;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: white;
+      color: #7B1E3A;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      color: #7B1E3A;
+      font-size: 18px;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li {
+      cursor: pointer;
+    }
+
+    .language-toggle button {
+      margin-left: 5px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      background: #A64D6A;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .language-toggle button:hover {
+      background: #7B1E3A;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .profile-img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #7B1E3A;
+    }
+
+    .hero h1 {
+      color: #7B1E3A;
+      font-size: 40px;
+    }
+
+    .hero h3 {
+      color: #A64D6A;
+      margin: 10px 0;
+    }
+
+    .hero p {
+      color: #333;
+      font-size: 18px;
+    }
+
+    .hero button {
+      background: #7B1E3A;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      transform: scale(1.05);
+    }
+
+    .hero .tagline {
+      font-style: italic;
+      margin-top: 10px;
+      color: #7B1E3A;
+    }
+
+    /* ================= ABOUT ================= */
+    .box {
+      background: white;
+      margin: 30px auto;
+      padding: 25px;
+      width: 80%;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* ================= PROJECTS ================= */
+    .projects {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 220px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .project-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .card button {
+      background: #7B1E3A;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card button:hover {
+      background: #A64D6A;
+      transform: scale(1.05);
+    }
+
+    /* ================= LIGHTBOX ================= */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .lightbox button {
+      position: absolute;
+      top: 50%;
+      font-size: 30px;
+      color: #fff;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .lightbox button:hover {
+      color: #ddd;
+    }
+
+    .lightbox button:nth-of-type(1) { left: 20px; } /* Prev */
+    .lightbox button:nth-of-type(2) { right: 20px; } /* Next */
+
+    /* ================= SKILLS ================= */
+    .skills {
+      width: 60%;
+      margin: 50px auto;
+    }
+
+    .skill {
+      margin: 15px 0;
+    }
+
+    .bar {
+      background: #ddd;
+      height: 10px;
+      border-radius: 10px;
+    }
+
+    .bar div {
+      height: 10px;
+      background: #A64D6A;
+      border-radius: 10px;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #7B1E3A;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #A64D6A;
+      text-decoration: underline;
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+        cursor: pointer;
+      }
+
+      .navbar ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+
+      .navbar ul.active {
+        display: flex;
+      }
+    }
+
+    /* ================= FADE-IN ================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script>
+    // Toggle mobile menu
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+
+    // Fade-in on scroll
+    window.addEventListener('scroll', function() {
+      const elements = document.querySelectorAll('.fade-in');
+      const windowBottom = window.innerHeight + window.scrollY;
+      elements.forEach(el => {
+        if (windowBottom > el.offsetTop + 100) {
+          el.classList.add('visible');
+        }
+      });
+    });
+
+    // Language toggle
+    function setLanguage(lang) {
+      document.querySelectorAll('.lang-en').forEach(el => {
+        el.style.display = lang === 'en' ? 'inline' : 'none';
+      });
+      document.querySelectorAll('.lang-ar').forEach(el => {
+        el.style.display = lang === 'ar' ? 'inline' : 'none';
+      });
+    }
+
+    // Projects Lightbox
+    const projects = {
+      'TOg': [
+        '1.png',
+        '2.png',
+        '3.png' , // أضيفي كل صور التطبيق هنا
+        '4.png',
+        '5.png',
+        '6.png',
+        '7.png' ,
+        '8.png',
+        '9.png',
+        '10.png',
+        '11.png',
+        '12.png',
+        '13.png',  
+      ]
+    };
+
+    let currentIndex = 0;
+    let currentProject = [];
+
+    function openGallery(projectName) {
+      currentProject = projects[projectName];
+      currentIndex = 0;
+      document.getElementById('lightbox').style.display = "block";
+      document.getElementById('lightbox-img').src = currentProject[currentIndex];
+    }
+
+    function closeGallery() {
+      document.getElementById('lightbox').style.display = "none";
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % currentProject.length;
+      document.getElementById('lightbox-img').src = currentProject[currentIndex];
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + currentProject.length) % currentProject.length;
+      document.getElementById('lightbox-img').src = currentProject[currentIndex];
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="cv.png" class="logo-img">
+      <span class="lang-en">Nusiba Elgrew</span>
+      <span class="lang-ar" style="display:none;">نسيبة القريو</span>
+    </div>
+
+    <div class="language-toggle">
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('ar')">عربي</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero fade-in">
+    <img src="cv.png" class="profile-img">
+    <h1>
+      <span class="lang-en">Nusiba Elgrew</span>
+      <span class="lang-ar" style="display:none;">نسيبة القريو</span>
+    </h1>
+    <h3>
+      <span class="lang-en">CS Graduate & App & Web Developer</span>
+      <span class="lang-ar" style="display:none;">خريجة علوم الحاسوب ومطورة تطبيقات ومواقع</span>
+    </h3>
+    <p>
+      <span class="lang-en">Turning ideas into smart, user-friendly apps and websites</span>
+      <span class="lang-ar" style="display:none;">تحويل الأفكار إلى تطبيقات ومواقع ذكية وسهلة الاستخدام</span>
+    </p>
+    <p class="tagline">
+      <span class="lang-en">Mobile App Development | UI/UX Design</span>
+      <span class="lang-ar" style="display:none;">تطوير تطبيقات الموبايل | تصميم واجهات المستخدم</span>
+    </p>
+  </section>
+
+  <!-- About -->
+  <section class="about fade-in">
+    <div class="box">
+      <div>
+        <h2>
+          <span class="lang-en">About Me</span>
+          <span class="lang-ar" style="display:none;">من أنا</span>
+        </h2>
+        <p>
+          <span class="lang-en">
+            I am a Computer Science graduate passionate about building modern systems and mobile applications.
+            I enjoy creating user-friendly digital solutions and combining technical development with creative design.
+          </span>
+          <span class="lang-ar" style="display:none;">
+            أنا خريجة علوم الحاسوب، شغوفة ببناء الأنظمة الحديثة وتطبيقات الهاتف. أحب إنشاء حلول رقمية سهلة الاستخدام ودمج التطوير التقني مع التصميم الإبداعي.
+          </span>
+        </p>
+      </div>
+      <div>
+        <h3>
+          <span class="lang-en">Al-Rifaq University</span>
+          <span class="lang-ar" style="display:none;">جامعة الرفاق الاهلية</span>
+        </h3>
+        <p>
+          <span class="lang-en">Bachelor of Computer Science</span>
+          <span class="lang-ar" style="display:none;">بكالوريوس علوم الحاسوب</span>
+        </p>
+        <p>2023 - 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects fade-in">
+    <h2>
+      <span class="lang-en">My Projects</span>
+      <span class="lang-ar" style="display:none;">مشاريعي</span>
+    </h2>
+
+    <div class="cards">
+      <div class="card">
+        <img src="1.png" class="project-img" alt="TOQ App" onclick="openGallery('TOQ')">
+        <h3>
+          <span class="lang-en">TOG Optical Store App</span>
+          <span class="lang-ar" style="display:none;">تطبيق متجر توق</span>
+        </h3>
+        <p>
+          <span class="lang-en">
+            A mobile e-commerce application developed for TOG Optical Company, allowing users to browse glasses and lenses, view product details, and manage orders easily.
+          </span>
+          <span class="lang-ar" style="display:none;">
+            تطبيق تجارة إلكترونية للهاتف لشركة توق للبصريات، يتيح للمستخدمين تصفح النظارات والعدسات، عرض تفاصيل المنتجات وإدارة الطلبات بسهولة.
+          </span>
+        </p>
+        <button onclick="openGallery('TOQ')">
+          <span class="lang-en">View Project</span>
+          <span class="lang-ar" style="display:none;">عرض المشروع</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeGallery()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <button onclick="prevImage()">❮</button>
+    <button onclick="nextImage()">❯</button>
+  </div>
+
+  <!-- Skills -->
+  <section class="skills fade-in">
+    <h2>
+      <span class="lang-en">Skills</span>
+      <span class="lang-ar" style="display:none;">المهارات</span>
+    </h2>
+
+    <div class="skill">
+      <span>Flutter & Dart</span>
+      <div class="bar"><div style="width:75%"></div></div>
+    </div>
+    <div class="skill">
+      <span>HTML & CSS</span>
+      <div class="bar"><div style="width:70%"></div></div>
+    </div>
+    <div class="skill">
+      <span>Java</span>
+      <div class="bar"><div style="width:60%"></div></div>
+    </div>
+    <div class="skill">
+      <span>SQL Databases</span>
+      <div class="bar"><div style="width:55%"></div></div>
+    </div>
+    <div class="skill">
+      <span>UI/UX Design</span>
+      <div class="bar"><div style="width:80%"></div></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer class="fade-in">
+    <h2>
+      <span class="lang-en">Contact Me</span>
+      <span class="lang-ar" style="display:none;"> لتـواصـل معـي</span>
+    </h2>
+    <p><a href="mailto:nusubaelgerw@gmail.com" target="_blank">Gmail</a></p>
+    <p><a href="https://wa.me/218919088605" target="_blank">WhatsApp</a></p>
+    <p><a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank">LinkedIn</a></p>
+    <p>Tripoli, Libya | طرابلس، ليبيا</p>
+  </footer>
+
+</body>
+</html>
