@@ -1,315 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Nusiba Portfolio</title>
-  <style>
-    /* ================= GLOBAL ================= */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #F5E6E8;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nusiba Elgrew - Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    /* ================= NAVBAR ================= */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background: white;
-      color: #7B1E3A;
-      position: relative;
-    }
+<body>
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: bold;
-      color: #7B1E3A;
-      font-size: 18px;
-    }
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="cv.png" class="logo-img" alt="Logo">
+      <span>Nusiba Elgrew</span>
+    </div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    .logo-img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-    }
+  <!-- Hero Section -->
+  <header class="hero fade-in">
+    <img src="cv.png" class="profile-img" alt="Nusiba Elgrew">
+    <h1>Nusiba Elgrew</h1>
+    <h3>Software Engineer</h3>
+    <p>A Computer Science graduate with a strong interest in software development and modern technologies. Certified in
+      Flutter and passionate about learning and building mobile and web applications.</p>
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
+    <div class="hero-buttons">
+      <button class="btn-primary"
+        onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">View My Work</button>
+      <a href="Cv Nusiba .pdf" download><button class="btn-outline">Download CV</button></a>
+    </div>
+  </header>
 
-    .navbar ul li {
-      cursor: pointer;
-    }
+  <main class="section-container">
 
-    .language-toggle button {
-      margin-left: 5px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      background: #A64D6A;
-      color: white;
-      transition: 0.3s;
-    }
+    <!-- About / Short Bio -->
+    <section id="about" class="box fade-in">
+      <h2 class="section-title">About Me</h2>
+      <p style="color: #444; line-height: 1.8; margin-bottom: 25px;">
+        A Computer Science graduate with a strong interest in software development and modern technologies. Certified in
+        Flutter and passionate about learning and building mobile and web applications. I have foundational experience
+        in website design and application development, along with knowledge of programming and problem solving. Eager to
+        grow my technical skills and contribute to innovative projects within a professional environment.
+      </p>
 
-    .language-toggle button:hover {
-      background: #7B1E3A;
-    }
+      <div style="background: #F9F9F9; padding: 15px 20px; border-radius: 10px; border-left: 4px solid #A64D6A;">
+        <span style="display: inline-block; margin-right: 20px;"><strong>Contact:</strong> +218-919088605</span>
+        <span style="display: inline-block; margin-right: 20px;"><strong>Email:</strong> <a
+            href="mailto:nusibaelgrew@gmail.com"
+            style="color: #A64D6A; text-decoration: none; font-weight: 500;">nusibaelgrew@gmail.com</a></span>
+        <span style="display: inline-block;"><strong>Location:</strong> Al Magreef – Tripoli, Libya</span>
+      </div>
+    </section>
 
-    /* ================= HERO ================= */
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
+    <!-- Work Experience -->
+    <section id="resume" class="box fade-in">
+      <h2 class="section-title">Work Experience</h2>
+      <div style="margin-bottom: 20px;">
+        <h3 class="subtitle">Software Developer (Freelance)</h3>
+        <div class="date-text">Full Stack & UI/UX & System & Database Analysis | 2025 – Present</div>
+        <ul class="list-items">
+          <li>Developed websites and desktop applications with strong focus on UI/UX design.</li>
+          <li>Experienced in systems analysis, project management, and database management.</li>
+          <li>Willing to expand into mobile application development.</li>
+        </ul>
+      </div>
+    </section>
 
-    .profile-img {
-      width: 120px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      border: 3px solid #7B1E3A;
-    }
+    <!-- Education -->
+    <section class="box fade-in">
+      <h2 class="section-title">Education</h2>
+      <div>
+        <h3 class="subtitle">B.Sc. in Computer Science</h3>
+        <div class="date-text" style="margin-bottom: 0;">University of Al-Rafak, Tripoli, Libya | Duration: 2023 – 2026
+        </div>
+      </div>
+    </section>
 
-    .hero h1 {
-      color: #7B1E3A;
-      font-size: 40px;
-    }
+    <!-- Courses -->
+    <section class="box fade-in">
+      <h2 class="section-title">Courses & Certifications</h2>
+      <div>
+        <h3 class="subtitle">Eta Coding – Flutter Mobile Development Course</h3>
+        <div class="date-text">2025 </div>
+        <ul class="list-items">
+          <li>Learned environment setup, project structure, UI design, state management, lists, dynamic components,
+            screen navigation, API integration, and optimization.</li>
+          <li>Completed a fully functional mobile application as a final project.</li>
+        </ul>
+      </div>
+    </section>
 
-    .hero h3 {
-      color: #A64D6A;
-      margin: 10px 0;
-    }
+    <!-- Skills Overview -->
+    <section class="box fade-in">
+      <h2 class="section-title">Technical Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skills-category">
+          <h4>Programming Languages</h4>
+          <ul>
+            <li>Java, C, C++, C#</li>
+            <li>Python, VB.NET</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h4>Web & Mobile</h4>
+          <ul>
+            <li>HTML, CSS, React, JavaScript</li>
+            <li>Bootstrap, ASP.NET</li>
+            <li>Flutter, Dart</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h4>Databases & Tools</h4>
+          <ul>
+            <li>SQL, MySQL, Delphi, Firebase</li>
+            <li>APIs, Node.js</li>
+            <li>Git, GitHub, Postman, Figma</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h4>Concepts & Networking</h4>
+          <ul>
+            <li>Networking basics (Cisco Packet Tracer)</li>
+            <li>Cyber Basics (Kali Linux, Metasploit)</li>
+            <li>Problem Solving, Continuous Learning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    .hero p {
-      color: #333;
-      font-size: 18px;
-    }
+  </main>
 
-    .hero button {
-      background: #7B1E3A;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      margin-top: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+  <!-- Projects / Portfolio (Highlighted with White Background) -->
+  <section id="portfolio" class="fade-in">
+    <h2>Projects & Portfolio</h2>
+    <p>A selection of my recent applications and development work.</p>
 
-    .hero button:hover {
-      transform: scale(1.05);
-    }
+    <div class="portfolio-grid">
+      <!-- Tog App -->
+      <div class="portfolio-item">
+        <img src="1.png" alt="TOG App">
+        <h3>Tog Mobile Application</h3>
+        <h4>Graduation Project</h4>
+        <div class="tech-stack">Flutter • Firebase • REST API • Figma</div>
+        <p>A mobile app for Tog Company to display and sell products online. Features include user authentication (Sign
+          up/Login), product browsing with images and detailed descriptions, shopping cart, and wishlist with a clean
+          user-friendly interface.</p>
+        <button class="btn-project" onclick="openGallery('TOg')">View Gallery</button>
+      </div>
 
-    .hero .tagline {
-      font-style: italic;
-      margin-top: 10px;
-      color: #7B1E3A;
-    }
+      <!-- Placeholder Design 1 -->
+      <div class="portfolio-item">
+        <img src="GD/1.png" alt="Graphic Design Work"
+          style="object-fit: contain; padding: 20px; box-sizing: border-box;">
+        <h3>Graphic Design & UI</h3>
+        <h4>Design Work</h4>
+        <div class="tech-stack">Canva • Figma • Photoshop</div>
+        <p>A selection of visual and promotional designs I have created, including posters, presentations, and
+          advertising materials. I enjoy creating clean and visually appealing content, and I continue to develop my
+          design skills alongside my work in software development.</p>
+        <button class="btn-project" onclick="openGallery('GD')">View Gallery</button>
+      </div>
 
-    /* ================= ABOUT ================= */
-    .box {
-      background: white;
-      margin: 30px auto;
-      padding: 25px;
-      width: 80%;
-      border-radius: 15px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+      <!-- Placeholder Design 2 -->
+      <div class="portfolio-item">
+        <img src="cv.png" alt="Graphic Design 2" style="object-fit: contain; padding: 20px; box-sizing: border-box;">
+        <h3>Web Interfaces</h3>
+        <h4>Front-End Development</h4>
+        <div class="tech-stack">HTML • CSS • React</div>
+        <p>Responsive web designs and layouts demonstrating my ability to combine creative visual design with functional
+          front-end technical development.</p>
+        <button class="btn-project" onclick="alert('More project details coming soon!')">View Project</button>
+      </div>
+    </div>
+  </section>
 
-    /* ================= PROJECTS ================= */
-    .projects {
-      text-align: center;
-      margin: 50px 0;
-    }
+  <!-- Lightbox Modal for Gallery -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeGallery()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Gallery Image">
+    <button onclick="prevImage()">❮</button>
+    <button onclick="nextImage()">❯</button>
+  </div>
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+  <!-- Contact / Footer -->
+  <footer id="contact" class="fade-in">
+    <h2>Get In Touch</h2>
+    <p>Open to new opportunities and exciting engineering challenges.</p>
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      width: 220px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+    <div class="social-links">
+      <a href="mailto:nusibaelgrew@gmail.com" target="_blank">nusibaelgrew@gmail.com</a>
+      <a href="https://wa.me/218919088605" target="_blank">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/nusiba-elgrew-77a73628a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+        target="_blank">LinkedIn Profile</a>
+    </div>
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
+    <div class="footer-bottom">
+      <p style="margin: 0;">Tripoli, Libya | طرابلس، ليبيا</p>
+      <p style="margin: 5px 0 0 0; opacity: 0.6; font-size: 12px;">&copy; 2026 Nusiba Elgrew. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-    .project-img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    .card button {
-      background: #7B1E3A;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .card button:hover {
-      background: #A64D6A;
-      transform: scale(1.05);
-    }
-
-    /* ================= LIGHTBOX ================= */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.9);
-    }
-
-    .lightbox-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80%;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .lightbox button {
-      position: absolute;
-      top: 50%;
-      font-size: 30px;
-      color: #fff;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .lightbox button:hover {
-      color: #ddd;
-    }
-
-    .lightbox button:nth-of-type(1) { left: 20px; } /* Prev */
-    .lightbox button:nth-of-type(2) { right: 20px; } /* Next */
-
-    /* ================= SKILLS ================= */
-    .skills {
-      width: 60%;
-      margin: 50px auto;
-    }
-
-    .skill {
-      margin: 15px 0;
-    }
-
-    .bar {
-      background: #ddd;
-      height: 10px;
-      border-radius: 10px;
-    }
-
-    .bar div {
-      height: 10px;
-      background: #A64D6A;
-      border-radius: 10px;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: #7B1E3A;
-      color: white;
-      text-align: center;
-      padding: 30px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    footer a:hover {
-      color: #A64D6A;
-      text-decoration: underline;
-    }
-
-    /* ================= MOBILE ================= */
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-        cursor: pointer;
-      }
-
-      .navbar ul {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: white;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        display: none;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      }
-
-      .navbar ul.active {
-        display: flex;
-      }
-    }
-
-    /* ================= FADE-IN ================= */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
   <script>
-    // Toggle mobile menu
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
-
-    // Fade-in on scroll
-    window.addEventListener('scroll', function() {
+    // Fade-in on scroll animation
+    window.addEventListener('scroll', function () {
       const elements = document.querySelectorAll('.fade-in');
       const windowBottom = window.innerHeight + window.scrollY;
       elements.forEach(el => {
@@ -319,43 +221,25 @@
       });
     });
 
-    // Language toggle
-    function setLanguage(lang) {
-      document.querySelectorAll('.lang-en').forEach(el => {
-        el.style.display = lang === 'en' ? 'inline' : 'none';
-      });
-      document.querySelectorAll('.lang-ar').forEach(el => {
-        el.style.display = lang === 'ar' ? 'inline' : 'none';
-      });
-    }
+    // Trigger fade-in on load
+    window.dispatchEvent(new Event('scroll'));
 
-    // Projects Lightbox
+    // Lightbox Functionality
     const projects = {
-      'TOg': [
-        '1.png',
-        '2.png',
-        '3.png' , // أضيفي كل صور التطبيق هنا
-        '4.png',
-        '5.png',
-        '6.png',
-        '7.png' ,
-        '8.png',
-        '9.png',
-        '10.png',
-        '11.png',
-        '12.png',
-        '13.png',  
-      ]
+      'TOg': ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', '13.png'],
+      'GD': ['GD/1.png', 'GD/2.png', 'GD/photo_2026-03-12_03-46-14.jpg', 'GD/photo_2026-03-12_03-46-27.jpg', 'GD/photo_2026-03-12_03-47-12.jpg', 'GD/photo_2026-03-12_03-47-18.jpg', 'GD/photo_2026-03-12_03-47-37.jpg', 'GD/photo_2026-03-12_03-48-10.jpg']
     };
 
     let currentIndex = 0;
     let currentProject = [];
 
     function openGallery(projectName) {
-      currentProject = projects[projectName];
-      currentIndex = 0;
-      document.getElementById('lightbox').style.display = "block";
-      document.getElementById('lightbox-img').src = currentProject[currentIndex];
+      if (projects[projectName]) {
+        currentProject = projects[projectName];
+        currentIndex = 0;
+        document.getElementById('lightbox').style.display = "block";
+        document.getElementById('lightbox-img').src = currentProject[currentIndex];
+      }
     }
 
     function closeGallery() {
@@ -372,155 +256,6 @@
       document.getElementById('lightbox-img').src = currentProject[currentIndex];
     }
   </script>
-</head>
-
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="cv.png" class="logo-img">
-      <span class="lang-en">Nusiba Elgrew</span>
-      <span class="lang-ar" style="display:none;">نسيبة القريو</span>
-    </div>
-
-    <div class="language-toggle">
-      <button onclick="setLanguage('en')">English</button>
-      <button onclick="setLanguage('ar')">عربي</button>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero fade-in">
-    <img src="cv.png" class="profile-img">
-    <h1>
-      <span class="lang-en">Nusiba Elgrew</span>
-      <span class="lang-ar" style="display:none;">نسيبة القريو</span>
-    </h1>
-    <h3>
-      <span class="lang-en">CS Graduate & App & Web Developer</span>
-      <span class="lang-ar" style="display:none;">خريجة علوم الحاسوب ومطورة تطبيقات ومواقع</span>
-    </h3>
-    <p>
-      <span class="lang-en">Turning ideas into smart, user-friendly apps and websites</span>
-      <span class="lang-ar" style="display:none;">تحويل الأفكار إلى تطبيقات ومواقع ذكية وسهلة الاستخدام</span>
-    </p>
-    <p class="tagline">
-      <span class="lang-en">Mobile App Development | UI/UX Design</span>
-      <span class="lang-ar" style="display:none;">تطوير تطبيقات الموبايل | تصميم واجهات المستخدم</span>
-    </p>
-  </section>
-
-  <!-- About -->
-  <section class="about fade-in">
-    <div class="box">
-      <div>
-        <h2>
-          <span class="lang-en">About Me</span>
-          <span class="lang-ar" style="display:none;">من أنا</span>
-        </h2>
-        <p>
-          <span class="lang-en">
-            I am a Computer Science graduate passionate about building modern systems and mobile applications.
-            I enjoy creating user-friendly digital solutions and combining technical development with creative design.
-          </span>
-          <span class="lang-ar" style="display:none;">
-            أنا خريجة علوم الحاسوب، شغوفة ببناء الأنظمة الحديثة وتطبيقات الهاتف. أحب إنشاء حلول رقمية سهلة الاستخدام ودمج التطوير التقني مع التصميم الإبداعي.
-          </span>
-        </p>
-      </div>
-      <div>
-        <h3>
-          <span class="lang-en">Al-Rifaq University</span>
-          <span class="lang-ar" style="display:none;">جامعة الرفاق الاهلية</span>
-        </h3>
-        <p>
-          <span class="lang-en">Bachelor of Computer Science</span>
-          <span class="lang-ar" style="display:none;">بكالوريوس علوم الحاسوب</span>
-        </p>
-        <p>2023 - 2026</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="projects fade-in">
-    <h2>
-      <span class="lang-en">My Projects</span>
-      <span class="lang-ar" style="display:none;">مشاريعي</span>
-    </h2>
-
-    <div class="cards">
-      <div class="card">
-        <img src="1.png" class="project-img" alt="TOQ App" onclick="openGallery('TOQ')">
-        <h3>
-          <span class="lang-en">TOG Optical Store App</span>
-          <span class="lang-ar" style="display:none;">تطبيق متجر توق</span>
-        </h3>
-        <p>
-          <span class="lang-en">
-            A mobile e-commerce application developed for TOG Optical Company, allowing users to browse glasses and lenses, view product details, and manage orders easily.
-          </span>
-          <span class="lang-ar" style="display:none;">
-            تطبيق تجارة إلكترونية للهاتف لشركة توق للبصريات، يتيح للمستخدمين تصفح النظارات والعدسات، عرض تفاصيل المنتجات وإدارة الطلبات بسهولة.
-          </span>
-        </p>
-        <button onclick="openGallery('TOQ')">
-          <span class="lang-en">View Project</span>
-          <span class="lang-ar" style="display:none;">عرض المشروع</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeGallery()">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-    <button onclick="prevImage()">❮</button>
-    <button onclick="nextImage()">❯</button>
-  </div>
-
-  <!-- Skills -->
-  <section class="skills fade-in">
-    <h2>
-      <span class="lang-en">Skills</span>
-      <span class="lang-ar" style="display:none;">المهارات</span>
-    </h2>
-
-    <div class="skill">
-      <span>Flutter & Dart</span>
-      <div class="bar"><div style="width:75%"></div></div>
-    </div>
-    <div class="skill">
-      <span>HTML & CSS</span>
-      <div class="bar"><div style="width:70%"></div></div>
-    </div>
-    <div class="skill">
-      <span>Java</span>
-      <div class="bar"><div style="width:60%"></div></div>
-    </div>
-    <div class="skill">
-      <span>SQL Databases</span>
-      <div class="bar"><div style="width:55%"></div></div>
-    </div>
-    <div class="skill">
-      <span>UI/UX Design</span>
-      <div class="bar"><div style="width:80%"></div></div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <footer class="fade-in">
-    <h2>
-      <span class="lang-en">Contact Me</span>
-      <span class="lang-ar" style="display:none;"> لتـواصـل معـي</span>
-    </h2>
-    <p><a href="mailto:nusubaelgerw@gmail.com" target="_blank">Gmail</a></p>
-    <p><a href="https://wa.me/218919088605" target="_blank">WhatsApp</a></p>
-    <p><a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank">LinkedIn</a></p>
-    <p>Tripoli, Libya | طرابلس، ليبيا</p>
-  </footer>
-
 </body>
+
 </html>
